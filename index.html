@@ -9,16 +9,22 @@
 </head>
 <body>
    <div class="quizWindow">
-    <h2>Question 1/4</h2>
-    <h3>What is the capital of France?</h3>
+    <h2 class="currentQuestionNumber">Question <span>1</span>/4</h2>
+    <h3 class="currentQuestion">What is the capital of France?</h3>
     <div class="answerOptions">
         <div class="answerOne"><p>New York</p></div>
         <div class="answerTwo"><p>London</p></div>
         <div class="answerThree"><p>Paris</p></div>
         <div class="answerFour"><p>Dublin</p></div>
     </div>
-
+    <div class="nextQuestion"><p>Next Question</p></div>
    </div> 
+   <div class="quizResults" hidden = "true">
+    <h2 class="results">Your results:</h2>
+    <p class="correctAnswers">Сorrect:<span></span></p>
+    <p class="wrongAnswers">Wrong:<span></span></p>
+    <div class="restartButton">Restart</div>
+   </div>
 </body>
 <script src="script.js"></script>
 </html>

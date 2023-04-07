@@ -147,7 +147,6 @@ body{
     margin: 0 auto;
     margin-top: 10%;
 }
-
 h2{
     font-size: 30px;
     font-weight: bold;
@@ -175,10 +174,53 @@ h3{
     margin-top: 15px;
     background-color: #2d376a;
     color: #fff;
+    cursor:pointer;
 }
 
 .answerOptions div:hover{
     background-color: #E0FFFF;
     color: black;
 }
+
+.nextQuestion {
+  border: 1px solid black;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  background-color: #2d376a;
+  color: #fff;
+  cursor:pointer;
+}
+
+.nextQuestion:hover{
+  background-color: #E0FFFF;
+  color: black;
+}
+
+.results {
+  font-size: 34px;
+
+}
+.correctAnswers {
+  color: green;
+  font-size: 26px;
+  margin-top: 16px;
+}
+.wrongAnswers {
+  color: red;
+  font-size: 26px;
+  margin-top: 16px;
+}
+
+.restartButton {
+  border: 1px solid black;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  background-color: #2d376a;
+  color: #fff;
+  cursor:pointer;
+  margin-top: 50px;
+}
+
 
