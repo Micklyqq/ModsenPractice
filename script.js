@@ -32,6 +32,7 @@ document.querySelector(".answerTwo").onclick = questionValidation;
 document.querySelector(".answerThree").onclick = questionValidation;
 document.querySelector(".answerFour").onclick = questionValidation;
 
+
 function questionSelector(){
     if(block == false){
         alert("Answer the question!");
@@ -78,8 +79,8 @@ document.body.firstElementChild.innerHTML = document.body.querySelector(".quizRe
 document.querySelector(".correctAnswers").firstElementChild.textContent = String(correctAnwer);
 document.querySelector(".wrongAnswers").firstElementChild.textContent = String(wronAnswer);
 document.querySelector(".restartButton").onclick = function(){
-
-}
+    location.reload();
+};
 }
 
 
