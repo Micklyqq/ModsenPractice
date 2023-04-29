@@ -138,6 +138,7 @@ body{
 .quizWindow {
     display: flex;
     flex-direction: column;
+    padding: 30px;
     align-items: center;
     border:1px solid black;
     width:35%;

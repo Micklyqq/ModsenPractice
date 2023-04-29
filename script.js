@@ -4,28 +4,34 @@ const questions =[
   
         question: "What is the capital of France?",
         options: ["New York","London","Paris","Dublin"],
-        answer:"Paris"
+        answer:"Paris",
+        multipleAnswers: false,
     },
     {
-        question: "What is the capital of Canada?",
-        options: ["Toronto","Ottawa","Vancouver","Dublin"],
-        answer:"Ottawa"
+        question: "Which of these characters are friends with Harry Potter?",
+        options: ["Ron Weasley","Draco Malfoy","Hermione Granger","Lord Voldemort"],
+        answer:["Ron Weasley","Hermione Granger"],
+        multipleAnswers: true,
     },
     {
         question: "What is the longest river in the world?",
         options: ["Nile","Amazon","Yangtze","Volga"],
-        answer:"Nile"
+        answer:"Nile",
+        multipleAnswers: false,
     },
     {
         question: "How many chromosomes are in the human genome? ",
         options: ["42","44","46","47"],
-        answer:"46"
+        answer:"46",
+        multipleAnswers: false,
     },  
 ] 
 let currentQuestionNumber = Number(document.querySelector(".currentQuestionNumber").firstElementChild.textContent);
 let correctAnwer = 0;
 let wronAnswer = 0;
 let block = false;
+let severalAnswersBlock = false;
+let countPickQuesion = 0;
 document.querySelector(".nextQuestion").onclick = questionSelector;
 document.querySelector(".answerOne").onclick = questionValidation;
 document.querySelector(".answerTwo").onclick = questionValidation;
@@ -34,6 +40,9 @@ document.querySelector(".answerFour").onclick = questionValidation;
 
 
 function questionSelector(){
+    if(questions[currentQuestionNumber].multipleAnswers == true){
+        alert("The next question has several answers!");
+    }
     if(block == false){
         alert("Answer the question!");
         return;
@@ -63,6 +72,26 @@ function questionSelector(){
 }
 
 function questionValidation(){
+    if(questions[currentQuestionNumber-1].multipleAnswers == true && block == false){
+      for(let elem of questions[currentQuestionNumber-1].answer){
+        if(this.textContent == elem){
+            this.style.background = "green";
+            severalAnswersBlock = true;
+            countPickQuesion++;
+        }
+      }
+      if(countPickQuesion == questions[currentQuestionNumber-1].answer.length){
+        block = true;
+        correctAnwer++;
+    };
+      if (severalAnswersBlock == false){
+        wronAnswer++;
+        this.style.background = "red";
+        block = true;
+      }
+      severalAnswersBlock = false;
+    }
+    else if(questions[currentQuestionNumber-1].multipleAnswers == false){
    if(this.textContent == questions[currentQuestionNumber-1].answer && block == false){
     correctAnwer++
     this.style.background = "green";
@@ -73,6 +102,7 @@ function questionValidation(){
     this.style.background = "red";
     block = true;
    }
+}
 }
 function endQuiz(){
 document.body.firstElementChild.innerHTML = document.body.querySelector(".quizResults").innerHTML;
