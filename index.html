@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-   <div class="quizWindow">
-    <h2 class="currentQuestionNumber">Question <span>1</span>/4</h2>
-    <h3 class="currentQuestion">What is the capital of France?</h3>
-    <div class="answerOptions">
+  </head>
+  <body>
+    <div class="quizWindow">
+      <p class="timer">
+        You have: <span class="minutes"></span><span>:</span
+        ><span class="seconds"></span>
+      </p>
+      <h2 class="currentQuestionNumber">Question <span>1</span>/4</h2>
+      <h3 class="currentQuestion">What is the capital of France?</h3>
+      <div class="answerOptions">
         <div class="answerOne"><p>New York</p></div>
         <div class="answerTwo"><p>London</p></div>
         <div class="answerThree"><p>Paris</p></div>
         <div class="answerFour"><p>Dublin</p></div>
+      </div>
+      <div class="nextQuestion"><p>Next Question</p></div>
     </div>
-    <div class="nextQuestion"><p>Next Question</p></div>
-   </div> 
-   <div class="quizResults" hidden = "true">
-    <h2 class="results">Your results:</h2>
-    <p class="correctAnswers">Сorrect:<span></span></p>
-    <p class="wrongAnswers">Wrong:<span></span></p>
-    <div class="restartButton">Restart</div>
-   </div>
-</body>
-<script src="script.js"></script>
+    <div class="quizResults" hidden="true">
+      <h2 class="results">Your results:</h2>
+      <p class="correctAnswers">Сorrect:<span></span></p>
+      <p class="wrongAnswers">Wrong:<span></span></p>
+      <div class="restartButton">Restart</div>
+    </div>
+    <div class="modalWindow" id="timeOutModal" hidden="true">
+      <h2>Time out!</h2>
+      <div class="showResultsButton">Show results</div>
+      <div class="restartButton">Restart</div>
+    </div>
+    <div class="modalWindow" id="multiselectModal" hidden="true">
+      <div class="modalWrapper">
+        <p>You have a few options to choose from in this question!</p>
+        <div class="understandIt">Ok</div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
